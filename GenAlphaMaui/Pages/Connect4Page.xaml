@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:res="clr-namespace:GenAlphaMaui.Resources.Strings"
+             Title="{x:Static res:AppResource.Connect4}"
+             xmlns:controls="clr-namespace:GenAlphaMaui.Controls"
+             xmlns:properties="clr-namespace:GenAlphaMaui.AttachedProperties"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Layouts;assembly=CommunityToolkit.Maui"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             Shell.NavBarIsVisible="False"
+             x:Class="GenAlphaMaui.Pages.Connect4Page">
+
+    <!--Page layout definition-->
+    <Grid BackgroundColor="{StaticResource VeryDarkBlue}"
+          Clip="True"
+          RowDefinitions="Auto, *">
+
+        <!--Top Row-->
+        <controls:TopBarControl BindingContext="{Binding TopBar}">
+            <Frame Padding="0"
+                   BackgroundColor="Transparent"
+                   Margin="0">
+                <Grid ColumnDefinitions="*"
+                      RowDefinitions="Auto">
+                    
+                    <!--The currentplayers and their scores-->
+                    <CollectionView ItemsSource="{Binding Players}"
+                                    Grid.ColumnSpan="3"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Start">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal"
+                                           ItemSpacing="30"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Position}" 
+                                   TextColor="{Binding CurrentPlayer, Converter={StaticResource CurrentPlayerToTextColor}}"
+                                   VerticalOptions="Center"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                </Grid>
+            </Frame>
+        </controls:TopBarControl>
+
+        <!--Game field Main Page content-->
+        <!--The Memory cards-->
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding Field}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="600">
+            
+            <!--Defining the panel to place the memory cards in-->
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" 
+                                 Span="{Binding NumberOfColumns}"
+                                 HorizontalItemSpacing="1"
+                                 VerticalItemSpacing="1"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!--Each Card Binding to the MemoryCardViewModel-->
+                    <Button Style="{StaticResource Connect4Button}" 
+                            BindingContext="{Binding }" 
+                            BackgroundColor="{Binding ChipState, Converter={StaticResource ChipStateToColor}}"
+                            Command="{Binding ClickCommand}"
+                            HeightRequest="{Binding Height}"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!--The game over grid layout-->
+        <Grid Grid.Row="1"
+              BackgroundColor="Transparent"
+              IsVisible="{Binding GameOver}">
+
+            <!--Winner and score-->
+            <Label VerticalOptions="Start"
+                   HorizontalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   Margin="100"
+                   TextColor="{StaticResource Gold}"
+                   BackgroundColor="{StaticResource VeryDarkBlue}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding Winner}" FontSize="{StaticResource FontSizeXXLarge}" />
+                        <Span Text=" Winner" FontSize="{StaticResource FontSizeXXLarge}"/>
+                        <Span Text="{x:Static system:Environment.NewLine}"/>
+                        <Span Text="Moves: " FontSize="{StaticResource FontSizeXXLarge}"/>
+                        <Span Text="{Binding Moves}" FontSize="{StaticResource FontSizeXXLarge}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+                
+            </Label>
+
+            <!--Replay game button, only visible when game over-->
+            <Button Style="{StaticResource RestartButton}"
+                    Text="{StaticResource FontAwesomeRotateLeft}"
+                    Command="{Binding RestartGameCommand}"
+                    FontSize="{StaticResource FontSizeSuperLarge}"
+                    HeightRequest="300"/>
+        </Grid>
+    </Grid>
+</ContentPage>

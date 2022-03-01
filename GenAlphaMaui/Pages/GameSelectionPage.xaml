@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GenAlphaMaui.GameSelectionPage"
-             Title="NewPage1"
-             BackgroundColor="White">
-    
-    <CollectionView ItemsSource="{Binding Games}">
+             xmlns:res="clr-namespace:GenAlphaMaui.Resources.Strings"
+             Title="{x:Static res:AppResource.GameSelection}"
+             xmlns:viewmodels="clr-namespace:GenAlphaMaui.ViewModels"
+             Shell.NavBarIsVisible="False"
+             x:Class="GenAlphaMaui.Pages.GameSelectionPage"
+             BackgroundColor="Aqua">
+
+    <CollectionView ItemsSource="{Binding Games}"
+                    HorizontalOptions="Center">
         <CollectionView.ItemsLayout>
-            <GridItemsLayout>
-                
-            </GridItemsLayout>
+            <GridItemsLayout Orientation="Horizontal" 
+                             Span="3"/>
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
-            <DataTemplate>
+            <DataTemplate >
                 <Button Text="{Binding Text}"
-                        Command="{Binding ClickCommand}"/>
+                        Command="{Binding ClickCommand}"
+                        HorizontalOptions="CenterAndExpand"/>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

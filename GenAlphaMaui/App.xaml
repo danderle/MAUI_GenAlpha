@@ -5,6 +5,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary Source="Resources/Styles/DefaultTheme.xaml"/>
+            <ResourceDictionary Source="Resources/Styles/Colors.xaml"/>
+            <ResourceDictionary Source="Resources/Styles/Fonts.xaml"/>
+            <ResourceDictionary Source="Resources/Styles/Buttons.xaml"/>
+            <ResourceDictionary Source="Resources/Styles/CheckBoxes.xaml"/>
+            <ResourceDictionary Source="Resources/Styles/ConverterKeys.xaml"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

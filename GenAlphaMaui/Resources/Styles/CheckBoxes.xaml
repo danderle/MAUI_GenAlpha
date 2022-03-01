@@ -1,0 +1,63 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="GenAlphaMaui.Resources.Styles.CheckBoxes">
+
+    <!--Toggle Switch-->
+<!--<Style x:Key="ToggleSwitchCheckBox" TargetType="CheckBox">
+<Setter Property="Margin" Value="5" />
+<Setter Property="Template">
+    <Setter.Value>
+        <ControlTemplate>
+            <Grid >
+                <Frame BackgroundColor="{StaticResource Green}" 
+                        CornerRadius="5" />
+                <Grid ColumnDefinitions="*,*">
+                    <Label Grid.Column="0" Text="ON" Margin="{TemplateBinding Margin}" TextColor="{StaticResource DarkWhite}" FontFamily="{StaticResource OpenSansRegular}"/>
+                    <Label Grid.Column="1" Text="OFF" Margin="{TemplateBinding Margin}" TextColor="{StaticResource DarkWhite}" FontFamily="{StaticResource OpenSansRegular}"/>
+                    <Frame x:Name="Switch" Grid.Column="0" BackgroundColor="{StaticResource VeryDarkBlue}" BorderColor="{StaticResource BlueGreen}" CornerRadius="2"/>
+                </Grid>
+            </Grid>
+        </ControlTemplate>
+    </Setter.Value>
+</Setter>
+<Style.Triggers>
+    <DataTrigger TargetType="CheckBox" Binding="{TemplateBinding IsChecked}" Value="False">
+        <Setter Property="Grid.Column" TargetName="Switch" Value="0" />
+    </DataTrigger>
+    <DataTrigger TargetType="CheckBox" Binding="{TemplateBinding IsChecked}" Value="True">
+        <Setter Property="Grid.Column" TargetName="Switch" Value="1" />
+    </DataTrigger>
+</Style.Triggers>
+</Style>-->
+
+    <!--Language Toggle-->
+    <!--<Style x:Key="LangguageToggleCheckBox" TargetType="CheckBox">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid >
+                        <Frame BackgroundColor="{StaticResource Green}" CornerRadius="5" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="EN" Margin="{TemplateBinding Margin}" TextColor="{StaticResource DarkWhite}" FontFamily="{StaticResource OpenSansRegular}"/>
+                            <Label Grid.Column="1" Text="DE" Margin="{TemplateBinding Margin}" TextColor="{StaticResource DarkWhite}" FontFamily="{StaticResource OpenSansRegular}"/>
+                            <Frame x:Name="Switch" Grid.Column="0" BackgroundColor="{StaticResource VeryDarkBlue}" BorderColor="{StaticResource BlueGreen}" CornerRadius="2"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="Grid.Column" TargetName="Switch" Value="0" />
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Grid.Column" TargetName="Switch" Value="1" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>-->
+</ResourceDictionary>

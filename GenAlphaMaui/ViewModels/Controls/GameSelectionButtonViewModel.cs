@@ -1,6 +1,4 @@
-﻿using System.Windows.Input;
-
-namespace GenAlphaMaui;
+﻿namespace GenAlphaMaui.ViewModels;
 
 /// <summary>
 /// The view model for the game selection buttons
@@ -15,9 +13,9 @@ public class GameSelectionButtonViewModel : BaseViewModel
     public string Text { get; set; } = string.Empty;
 
     /// <summary>
-    /// The game page this button represents
+    /// The name of the page this button represents
     /// </summary>
-    public ApplicationPage GamePage { get; set; }
+    public string NameOfPage { get; set; }
 
     #endregion
 
@@ -43,11 +41,11 @@ public class GameSelectionButtonViewModel : BaseViewModel
     /// <summary>
     /// Copy constructor
     /// </summary>
-    public GameSelectionButtonViewModel(string text, ApplicationPage gamePage)
+    public GameSelectionButtonViewModel(string text, string nameOfPage)
     {
         InitializeCommands();
         Text = text;
-        GamePage = gamePage;
+        NameOfPage = nameOfPage;
     }
 
     #endregion
@@ -57,9 +55,9 @@ public class GameSelectionButtonViewModel : BaseViewModel
     /// <summary>
     /// The click command method
     /// </summary>
-    private void Click()
+    private async void Click()
     {
-        DI.Service<ApplicationViewModel>().GoToPage(GamePage);
+        await Shell.Current.GoToAsync($"{NameOfPage}");
     }
 
     #endregion

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:converters="clr-namespace:GenAlphaMaui.Converters"
+                    x:Class="GenAlphaMaui.Resources.Styles.ConverterKeys">
+
+    <converters:CurrentPlayerToTextColorConverter x:Key="CurrentPlayerToTextColor" />
+    <converters:ChipStateToColorConverter x:Key="ChipStateToColor" />
+    <converters:SettingTypeToBoolConverter x:Key="SettingTypeToBool" />
+
+</ResourceDictionary>

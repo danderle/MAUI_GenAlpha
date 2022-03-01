@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
@@ -31,7 +31,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\appicon.svg" TextColorFile="Resources\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
@@ -53,19 +53,105 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+	  <None Remove="Resources\Fonts\Font Awesome 5 Free-Regular-400.otf" />
+	  <None Remove="Resources\Fonts\Font Awesome 5 Free-Solid-900.otf" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre7" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Controls\SideMenuControl.xaml.cs">
+	    <DependentUpon>SideMenuControl.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Controls\SettingsListItemControl.xaml.cs">
+	    <DependentUpon>SettingsListItemControl.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Controls\SettingsListControl.xaml.cs">
+	    <DependentUpon>SettingsListControl.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Connect4Page.xaml.cs">
+	    <DependentUpon>Connect4Page.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\GameSelectionPage.xaml.cs">
 	    <DependentUpon>GameSelectionPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Strings\AppResource.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>AppResource.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Styles\CheckBoxes.xaml.cs">
+	    <DependentUpon>CheckBoxes.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Styles\Buttons.xaml.cs">
+	    <DependentUpon>Buttons.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Styles\Fonts.xaml.cs">
+	    <DependentUpon>Fonts.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Styles\ConverterKeys.xaml.cs">
+	    <DependentUpon>ConverterKeys.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Resources\Styles\Colors.xaml.cs">
+	    <DependentUpon>Colors.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Update="Resources\Strings\AppResource.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Controls\SideMenuControl.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\SettingsListItemControl.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\SettingsListControl.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Controls\TopBarControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\DesktopShell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Connect4Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\MobileShell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\GameSelectionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\CheckBoxes.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\Buttons.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\Fonts.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\ConverterKeys.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\Colors.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\DefaultTheme.xaml">

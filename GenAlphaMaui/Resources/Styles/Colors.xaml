@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="GenAlphaMaui.Resources.Styles.Colors">
+
+    <Color x:Key="Black">#000000</Color>
+    <Color x:Key="White">#ffffff</Color>
+    <Color x:Key="Red">#ff0000</Color>
+    <Color x:Key="Player1Red">#ff3333</Color>
+    <Color x:Key="DarkWhite">#edf1f4</Color>
+    <Color x:Key="LightGray">#d9dde0</Color>
+    <Color x:Key="Gray">#848e98</Color>
+    <Color x:Key="GrayBlue">#3f5064</Color>
+    <Color x:Key="PurpleRed">#ad2669</Color>
+    <Color x:Key="Gold">#ffd700</Color>
+    <Color x:Key="Player2Yellow">#ffff33</Color>
+    <Color x:Key="Green">#42b665</Color>
+    <Color x:Key="BlueGreen">#00817c</Color>
+    <Color x:Key="VeryDarkBlue">#15273b</Color>
+
+    <LinearGradientBrush x:Key="LightGreenMiddleGradient" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="{StaticResource Green}" Offset="0.0"/>
+        <GradientStop Color="{StaticResource White}" Offset="0.5"/>
+        <GradientStop Color="{StaticResource Green}" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LightGrayMiddleGradient" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="{StaticResource Gray}" Offset="0.0"/>
+        <GradientStop Color="{StaticResource White}" Offset="0.5"/>
+        <GradientStop Color="{StaticResource Gray}" Offset="1.0"/>
+    </LinearGradientBrush>
+</ResourceDictionary>

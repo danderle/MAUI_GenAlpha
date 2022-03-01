@@ -1,6 +1,4 @@
-﻿using GenAlphaMaui.Pages;
-
-namespace GenAlphaMaui;
+﻿namespace GenAlphaMaui;
 
 public partial class App : Application
 {
@@ -16,5 +14,9 @@ public partial class App : Application
             MainPage = new DesktopShell();
         else
             MainPage = new MobileShell();
+
+        Routing.RegisterRoute(nameof(Connect4Page), typeof(Connect4Page));
+        Routing.RegisterRoute(nameof(GameSelectionPage), typeof(GameSelectionPage));
+
     }
 }

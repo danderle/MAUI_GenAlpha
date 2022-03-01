@@ -1,4 +1,4 @@
-﻿namespace GenAlphaMaui;
+﻿namespace GenAlphaMaui.DataModels;
 
 /// <summary>
 /// A page of the application

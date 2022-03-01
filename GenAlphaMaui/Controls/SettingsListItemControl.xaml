@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GenAlphaMaui.Controls.SettingsListItemControl">
+
+    <!--The name or description of this item-->
+    <Label Text="{Binding Name}" 
+               Style="{StaticResource BaseStyle}" 
+               Margin="15 0" 
+               HorizontalOptions="Start"/>
+
+    <!--The main grid for this control--><!--
+    <Grid BackgroundColor="{StaticResource VeryDarkBlue}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        --><!--The name or description of this item--><!--
+        <Label Text="{Binding Name}" 
+               Style="{StaticResource BaseStyle}" 
+               Margin="15 0" 
+               HorizontalOptions="Start"/>
+
+        --><!--2nd column-->
+        <!--Increment option, is visible if the type of setting is an increment type--><!--
+        <StackLayout Grid.Column="1"
+                    Orientation="Horizontal" 
+                    HorizontalOptions="Center"
+                    IsVisible="{Binding SettingType, Converter={StaticResource SettingTypeToBool}, ConverterParameter=Increment}">
+            <Button Text="+"
+                    VerticalOptions="Center"
+                    Padding="10 2"
+                    FontFamily="{StaticResource OpenSansRegular}"
+                    Command="{Binding IncreaseCommand}"
+                    />
+            <Label Text="{Binding CurrentValue}" 
+                       Margin="10 0"
+                       WidthRequest="40"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                   />
+            <Button Text="-" 
+                    VerticalOptions="Center"
+                    Padding="10 2"
+                    FontFamily="{StaticResource OpenSansRegular}"
+                    Command="{Binding DecreaseCommand}"/>
+        </StackLayout>
+
+        --><!--The toggle switch option, is visible if the setting is a toggle type--><!--
+        <Switch Grid.Column="1"
+                WidthRequest="123"
+                VerticalOptions="Center"
+                IsToggled="{Binding IsChecked}"
+                IsVisible="{Binding SettingType, Converter={StaticResource SettingTypeToBool}, ConverterParameter=Toggle}"/>
+
+        --><!--The toggle switch option, is visible if the setting is a toggle type--><!--
+        <Switch Grid.Column="1"
+                WidthRequest="123"
+                VerticalOptions="Center"
+                IsToggled="{Binding IsChecked}"
+                IsVisible="{Binding SettingType, Converter={StaticResource SettingTypeToBool}, ConverterParameter=LanguageToggle}"/>--><!--
+
+    </Grid>-->
+</ContentView>

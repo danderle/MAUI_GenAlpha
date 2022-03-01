@@ -1,9 +1,10 @@
-namespace GenAlphaMaui;
+namespace GenAlphaMaui.Pages;
 
 public partial class GameSelectionPage : ContentPage
 {
-	public GameSelectionPage()
+	public GameSelectionPage(GameSelectionViewModel vm)
 	{
 		InitializeComponent();
+		BindingContext = vm;
 	}
 }

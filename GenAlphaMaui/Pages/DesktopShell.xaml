@@ -15,7 +15,6 @@
     </Shell.FlyoutHeader>
 
     <ShellContent Title="{Binding GameSelection.Title}"
-                  Icon="{AppThemeBinding Light=discover.png, Dark=discover_dark.png}"
                   ContentTemplate="{DataTemplate pages:GameSelectionPage}"/>
     
 </Shell>
